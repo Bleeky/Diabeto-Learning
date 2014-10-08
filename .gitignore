@@ -7,3 +7,6 @@ composer.lock
 .DS_Store
 Thumbs.db
 .idea/
+.gitignore
+app.php
+database.php
