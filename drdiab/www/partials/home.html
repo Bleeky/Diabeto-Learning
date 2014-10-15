@@ -1,0 +1,26 @@
+<section ng-controller="WeatherCtrl">
+
+	<section class="panel panel-padding" ng-class="{center:panel==0, left:panel>0}">
+		<p>Coucou ! Vous êtes bien sur le Home</p>
+		<form  ng-submit="search()">
+			<p><input type="text" class="text" placeholder="Rechercher une ville" ng-model="city"></p>
+			<p><input type="submit" class="submit" value="Rechercher"></p>
+		</form>
+
+	</section>
+
+	<section class="panel panel-padding"
+	 ng-class="{center:panel==1, right:panel<1}">
+		
+		<a ng-hide="panel==0" ng-click="panel=0">BACK</a>
+
+		<div class="row-title">
+			{{weather.city.name}} - {{weather.city.country}}
+		</div>
+
+		<div class="row" ng-class="{'row_active': $first}" ng-repeat="t in weather.list" ng-click="expand($event)">
+			<div class="temperature">{{Math.round(t.temp.day)}}°C - {{t.weather.0.main}} - <strong>{{t.dt * 1000 | date: "dd-MMM-yyyy"}}</strong></div>
+		</div>
+
+	</section>
+</section>
