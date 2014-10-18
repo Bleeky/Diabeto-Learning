@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'ngRoute'])
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/response_checkbox');
+  $urlRouterProvider.otherwise('/response_range');
 
 });
 

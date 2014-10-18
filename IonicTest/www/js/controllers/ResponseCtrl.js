@@ -9,4 +9,6 @@ function ResponseCtrl($scope){
 		"Réponse 4"
 	];
 
+	$scope.value = 9;
+
 }
