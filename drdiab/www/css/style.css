@@ -66,8 +66,7 @@
 	text-align: center;
 }
 
-.modul
-{
+.modul {
 	height: 20%;
 	text-align: center;
 	padding-top: 2%;
@@ -77,11 +76,6 @@
 	float: left;
 	border: solid 1px red;
 	display: inline-block;
-}
-
-.title_modul
-{
-	vertical-align: middle;
 }
 
 li {

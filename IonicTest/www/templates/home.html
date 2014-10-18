@@ -1,0 +1,11 @@
+<ion-header-bar class="bar-positive">
+    <h1 class="title">Dr Diab</h1>
+</ion-header-bar>
+<ion-content>
+	<div ng-repeat="item in (filteredItems = (modules | filter:query))">
+		<div class="row" ng-show="$index % 2 == 0">
+			<button class="module col col-33 col-offset-10">{{item}}</button>
+			<button ng-hide="($index + 1)===filteredItems.length" class="module col col-33 col-offset-20">{{filteredItems[$index + 1]}}</button>
+		</div>
+	</div>
+</ion-content>
