@@ -10,5 +10,4 @@ function ResponseCtrl($scope){
 	];
 
 	$scope.value = 9;
-
 }

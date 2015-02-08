@@ -26,6 +26,9 @@ window.ionic.version = '1.0.0-beta.13';
   var isDomReady = document.readyState === 'complete' || document.readyState === 'interactive';
 
   function domReady() {
+    analytics.startTrackerWithId('UA-44369965-2');
+    analytics.trackView('home');
+    console.log('done');
     isDomReady = true;
     for(var x=0; x<readyCallbacks.length; x++) {
       ionic.requestAnimationFrame(readyCallbacks[x]);
