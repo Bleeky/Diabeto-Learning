@@ -1,0 +1,23 @@
+<ion-header-bar class="bar-positive">
+    <h1 class="title">Dr Diab</h1>
+</ion-header-bar>
+<ion-content>
+
+	<div class="card">
+	  <div class="item item-text-wrap">
+		{{question}}
+	  </div>
+	</div>
+<br>
+
+	<div class="list" ng-repeat="item in propositions">
+	  <label class="item item-radio">
+	    <input type="radio" name="group">
+	    <div class="item-content">
+	      {{item}}
+	    </div>
+	    <i class="radio-icon ion-checkmark"></i>
+	  </label>
+
+	</div>
+</ion-content>
