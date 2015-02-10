@@ -7,3 +7,7 @@ body {
 .module {
 	font-size: 25px;
 }
+
+a {
+	text-decoration: none;
+}

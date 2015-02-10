@@ -32,10 +32,16 @@ angular.module('starter', ['ionic', 'ngRoute'])
       controller: "LoginCtrl"
     })
 
-    .state('home', {
+    .state('home', {  
       url: "/home",
       templateUrl: "templates/home.html",
       controller: "HomeCtrl"
+    })
+
+    .state('module', {
+      url: "/module/:moduleId",
+      templateUrl: "templates/module.html",
+      controller: "ModuleCtrl"
     })
 
     .state('response_radio', {

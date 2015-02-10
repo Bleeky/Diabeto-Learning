@@ -1,0 +1,24 @@
+<ion-header-bar class="bar-positive">
+    <h1 class="title">Dr Diab</h1>
+</ion-header-bar>
+<ion-content class="has-header">
+
+  <div class="list card">
+
+    <div class="item">
+      <h2>{{module.name}}</h2>
+      <p>{{module.description}}</p>
+    </div>
+
+    <div ng-show="module.img" class="item item-image">
+      <img src="{{module.img}}">
+    </div>
+
+    <a class="item item-icon-right assertive" href="#">
+      <i class="icon ion-eye"></i>
+      Lancer le cours
+    </a>
+
+  </div>
+
+</ion-content>

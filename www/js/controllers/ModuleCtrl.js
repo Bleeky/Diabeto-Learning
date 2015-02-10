@@ -1,5 +1,7 @@
-function HomeCtrl($scope, $http, $state) {
+function ModuleCtrl($scope, $state, $routeParams) {
+	console.log($state.params.moduleId);
 
+	$scope.moduleId = $state.params.moduleId;
 	$scope.modules = [
 		{ id: 1, name: "Module 1", description: "Petite description maggle" },
 		{ id: 2, name: "Module 2", description: "Module pourri lol", img: "img/ionic.png" },
@@ -12,28 +14,5 @@ function HomeCtrl($scope, $http, $state) {
 		{ id: 9, name: "Module 9", description: "Un ptit dernier ?" }
 	]
 
-	$scope.list = $scope.modules;
-	$scope.search = [
-		{str: ""}
-	];
-
-	$scope.goToModule = function (moduleId) {
-		console.log(moduleId);
-	}
-
-	$scope.updateList = function() {
-		$scope.list = [];
-		console.log($scope.search);
-		if ($scope.search.length == 0){
-			$scope.list = $scope.modules;
-			return ;
-		}
-		else
-		{
-			for (var i = 0; i <= $scope.modules.length - 1; i++) {
-				if ($scope.modules[i].name.search($scope.search.str) >= 0 || $scope.modules[i].description.search($scope.search.str) >= 0)
-					$scope.list.push($scope.modules[i]);
-			}
-		}
-	}
+	$scope.module = $scope.modules[$scope.moduleId - 1];
 }
