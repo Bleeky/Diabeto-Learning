@@ -1,4 +1,4 @@
-function ModuleCtrl($scope, $state, $routeParams) {
+function ModuleCtrl($scope, $state, $routeParams, $http) {
 	console.log($state.params.moduleId);
 
 	$scope.moduleId = $state.params.moduleId;
@@ -14,5 +14,13 @@ function ModuleCtrl($scope, $state, $routeParams) {
 		{ id: 9, name: "Module 9", description: "Un ptit dernier ?" }
 	]
 
+		function getSuccess (response) {
+			console.log("OMFG");
+			$scope.modules = response;
+		}
+
+	$http.get("10.14.60.28:8888/LearnerApi/public/api/module").success(getSuccess).error(function (){
+		alert("Impossible de récupérer les modules");
+	})
 	$scope.module = $scope.modules[$scope.moduleId - 1];
 }
