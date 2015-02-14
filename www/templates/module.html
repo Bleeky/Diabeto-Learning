@@ -6,11 +6,11 @@
   <div class="list card">
 
     <div class="item">
-      <h2>{{module.name}}</h2>
+      <h2>{{module.title}}</h2>
       <p>{{module.description}}</p>
     </div>
 
-    <div ng-show="module.img" class="item item-image">
+    <div ng-show="module.img!=undefined" class="item item-image">
       <img src="{{module.img}}">
     </div>
 

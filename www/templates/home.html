@@ -10,14 +10,14 @@
 	</div>
 
 	<div ng-repeat="item in list track by $index">
-		<a class="card" href="/#/module/{{item.id}}">
-		  <div class="item item-divider item-positive">
-		    {{item.name}}
-		  </div>
-		  <div class="item item-text-wrap" ng-class="{'item-thumbnail-left':item.img}">
-		      <img ng-if="item.img" src="item.img">
-		      <div>{{item.description}}</div>
-		  </div>
-		</a>
+
+		<div class="list">
+		    <a class="item" ng-class="{'item-thumbnail-left':item.img}" href="/#/module/{{item.id}}">
+		      <img src="{{item.img}}">
+		      <h2>{{item.title}}</h2>
+		      <p>{{item.description}}</p>
+		    </a>
+		</div>
+
   	</div>
 </ion-content>
