@@ -1,7 +1,7 @@
 <ion-header-bar class="bar-positive">
-    <h1 class="title">Dr Diab</h1>
+    <h1 class="title">Learner</h1>
 </ion-header-bar>
-<ion-content>
+<ion-content on-swipe-left="onSwipe('next')" on-swipe-right="onSwipe('prev')">
 	
 	<div ng-include="templates[index].url"></div>
 
