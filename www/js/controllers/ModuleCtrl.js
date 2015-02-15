@@ -1,5 +1,4 @@
 function ModuleCtrl($scope, $state, $routeParams, $http) {
-	console.log($state.params.moduleId);
 
 	$scope.moduleId = $state.params.moduleId;
 	function getSuccess(response) {

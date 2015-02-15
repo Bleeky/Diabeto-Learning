@@ -44,6 +44,12 @@ angular.module('starter', ['ionic', 'ngRoute'])
       controller: "ModuleCtrl"
     })
 
+    .state('diapo', {
+      url: "/diapo",
+      templateUrl: "templates/diapo_base.html",
+      controller: "DiapoCtrl"
+    })
+
     .state('response_radio', {
       url: "/response_radio",
       templateUrl: "templates/response_radio.html",
