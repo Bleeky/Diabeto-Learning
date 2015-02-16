@@ -15,7 +15,9 @@ function DiapoCtrl($scope, $http) {
 		$scope.diapo = response.diapo;
 		$scope.diapo.content = JSON.parse($scope.diapo.content);
 		$scope.diapo.content = $scope.diapo.content[0];
-		$scope.index = parseInt($scope.diapo.content.type) + 1;
+		$scope.index = parseInt($scope.diapo.content.type);
+		$scope.index = 3;
+		console.log($scope.diapo);
 	}
 
 	$scope.onSwipe = function(direction) {
