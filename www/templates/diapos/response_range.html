@@ -1,0 +1,16 @@
+	<div class="card">
+	  <div class="item item-text-wrap">
+		{{diapo.content.question}}
+	  </div>
+	</div>
+<br>
+
+<div class="range">
+  <i class="icon ion-minus-round"></i>
+  <input type="range" name="volume" min="{{diapo.content.range_begin}}" max="{{diapo.content.range_end}}" value="{{rangeValue}}" step="{{diapo.content.range_step}}" ng-model="rangeValue">
+  <i class="icon ion-plus-round"></i>
+</div>
+
+<div class="row">
+	<div class="col">{{rangeValue}}</div>
+</div>

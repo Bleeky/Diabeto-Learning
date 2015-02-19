@@ -1,0 +1,11 @@
+	<div class="card">
+	  <div class="item item-text-wrap">
+		{{diapo.content.question}}
+	  </div>
+	</div>
+	<br>
+
+	<div class="list" style="margin-top:-21px" ng-repeat="item in diapo.content.responses track by $index">
+	  <ion-radio ng-click="check('radio', $index)" class="item item-radio">{{item.response}}</ion-radio>
+
+	</div>
