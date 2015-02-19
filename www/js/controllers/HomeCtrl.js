@@ -1,4 +1,6 @@
-function HomeCtrl($scope, $http, $state) {
+function HomeCtrl($scope, $http, $state, $rootScope) {
+
+	$rootScope.isLogged = true;
 
 	function getSuccess(response) {
 		$scope.modules = response.modules;
@@ -8,12 +10,11 @@ function HomeCtrl($scope, $http, $state) {
 		];
 	}
 
-	$scope.url = "http://10.14.60.15:8888/LearnerApi/public/api/modules";
+	$scope.url = $rootScope.config.url + "/modules";
 	$http({method: 'GET',
 		url: $scope.url,
 	}).success(getSuccess).error(function (response){
 		console.log(response);
-		console.log("Non ? OMFG");
 	});
 
 	$scope.goToModule = function (moduleId) {
@@ -21,7 +22,7 @@ function HomeCtrl($scope, $http, $state) {
 	}
 
 	$scope.updateList = function() {
-		$scope.list = [];
+		$scope.list = [];	
 		if ($scope.search.str.length == 0){
 			$scope.list = $scope.modules;
 			return ;

@@ -1,4 +1,4 @@
-function DiapoCtrl($scope, $http) {
+function DiapoCtrl($scope, $http, $rootScope) {
 
 	$scope.index = 0;
 	$scope.templates = [
@@ -21,7 +21,7 @@ function DiapoCtrl($scope, $http) {
 	}
 
 	$scope.onSwipe = function(direction) {
-		$scope.url = "http://10.14.60.15:8888/LearnerApi/public/api/diapos/" + $scope.diapo.id + "/" + direction;
+		$scope.url = $rootScope.config.url + "/diapos/" + $scope.diapo.id + "/" + direction;
 		if ((direction == 'next' && $scope.diapo.next_id == null) || (direction == 'prev' && $scope.diapo.prev_id == null))
 			return ;
 		$http({method: 'GET',
@@ -31,7 +31,7 @@ function DiapoCtrl($scope, $http) {
 		});
 	}
 
-	$scope.url = "http://10.14.60.15:8888/LearnerApi/public/api/diapos/6";
+	$scope.url = $rootScope + "/diapos/1";
 	$http({method: 'GET',
 		url: $scope.url,
 	}).success(getSuccess).error(function (response){
