@@ -1,15 +1,16 @@
 function LoginCtrl($scope, $http, $state, $rootScope) {
 
 	$rootScope.config = {
-		"url" : "http://10.14.59.196:8888/LearnerApi/public/api",
-		"autoconnect" : "true"
+		url : "http://192.168.0.17:8888/LearnerApi/public/api",
+		autoconnect : true
 	}
 
-	$scope.loginUrl = $rootScope.connectionSuccess.url + "/login";
+	console.log($rootScope.config);
+
+	$scope.loginUrl = $rootScope.config.url + "/login";
 	$scope.login = "";
 	$scope.password = "";
 	
-	$scope
 
 	connectionSuccess = function(response) {
 		$state.go('home');
@@ -24,6 +25,6 @@ function LoginCtrl($scope, $http, $state, $rootScope) {
 		$http.get(this.loginUrl + "?login=" + this.login + "&password=" + this.password).success(connectionSuccess).error(connectionError);
 	}
 
-	if ($rootScope.config.autoconnect || $rootScope.isLogged)
+	if ($rootScope.config.autoconnect == true || $rootScope.isLogged)
 		$state.go('home');
 }

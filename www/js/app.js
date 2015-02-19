@@ -48,24 +48,6 @@ angular.module('starter', ['ionic', 'ngRoute'])
       url: "/diapo",
       templateUrl: "templates/diapo_base.html",
       controller: "DiapoCtrl"
-    })
-
-    .state('response_radio', {
-      url: "/response_radio",
-      templateUrl: "templates/response_radio.html",
-      controller: "ResponseCtrl"
-    })
-
-    .state('response_checkbox', {
-      url: "/response_checkbox",
-      templateUrl: "templates/response_checkbox.html",
-      controller: "ResponseCtrl"
-    })
-
-    .state('response_range', {
-      url: "/response_range",
-      templateUrl: "templates/response_range.html",
-      controller: "ResponseCtrl"
     });
 
   // if none of the above states are matched, use this as the fallback

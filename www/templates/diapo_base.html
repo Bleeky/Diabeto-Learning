@@ -5,6 +5,11 @@
 	
 	<div ng-include="templates[index].url"></div>
 
+
+	<a ng-show="diapo.content.type >= 6" ng-click="submitResponse()">
+		<button class="button button-dark">Valider</button>
+	</a>
+
 	<a ng-hide="diapo.next_id" href="/#/home">
 		<button class="button button-dark" href="/#/home">Revenir aux modules</button>
 	</a>

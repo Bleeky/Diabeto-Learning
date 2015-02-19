@@ -5,6 +5,7 @@ function ModuleCtrl($scope, $state, $routeParams, $http, $rootScope) {
 		$scope.module = response.module;
 	}
 
+
 	$scope.url = $rootScope.config.url + "/modules/" + $scope.moduleId;
 	$http({method: 'GET',
 		url: $scope.url,
