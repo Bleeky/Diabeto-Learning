@@ -6,9 +6,19 @@
 <br>
 
 <div class="range">
-  <i class="icon ion-minus-round"></i>
-  <input type="range" name="volume" min="{{diapo.content.range_begin}}" max="{{diapo.content.range_end}}" value="{{rangeValue}}" step="{{diapo.content.range_step}}" ng-model="rangeValue">
-  <i class="icon ion-plus-round"></i>
+
+	<div class="icon">
+	  {{diapo.content.range_begin}}
+      <i class="ion-minus-round"></i>
+  	</div>
+
+  <input id="rangeValue" type="range" name="volume" min="{{diapo.content.range_begin}}" max="{{diapo.content.range_end}}" value="{{rangeValue}}" step="{{diapo.content.range_step}}" ng-model="rangeValue">
+
+	<div class="icon">
+		{{diapo.content.range_end}}
+	    <i class="ion-plus-round"></i>
+	</div>
+
 </div>
 
 <div class="row">

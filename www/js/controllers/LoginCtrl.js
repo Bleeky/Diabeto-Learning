@@ -1,7 +1,7 @@
 function LoginCtrl($scope, $http, $state, $rootScope) {
 
 	$rootScope.config = {
-		url : "http://192.168.0.17:8888/LearnerApi/public/api",
+		url : "http://localhost:8888/LearnerApi/public/api",
 		autoconnect : true
 	}
 

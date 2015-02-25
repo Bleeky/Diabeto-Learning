@@ -1,10 +1,5 @@
 function DiapoCtrl($scope, $http, $rootScope, $ionicPopup) {
 
-	$rootScope.config = {
-		url : "http://192.168.0.17:8888/LearnerApi/public/api",
-		autoconnect : true
-	}
-
 	$scope.index = 0;
 	$scope.templates = [
 		{url: ""},
@@ -24,9 +19,10 @@ function DiapoCtrl($scope, $http, $rootScope, $ionicPopup) {
 		$scope.diapo.content = JSON.parse($scope.diapo.content);
 		$scope.diapo.content = $scope.diapo.content[0];
 		$scope.index = parseInt($scope.diapo.content.type);
-		if ($scope.index == 8)
+		if ($scope.index == 8) {
 			$scope.rangeValue = (parseInt($scope.diapo.content.range_begin) + parseInt($scope.diapo.content.range_end)) / 2;
-		console.log($scope.diapo);
+			$scope.rangeValue = $scope.rangeValue.toString();
+		}
 	}
 
 	$scope.onSwipe = function(direction) {
@@ -56,7 +52,7 @@ function DiapoCtrl($scope, $http, $rootScope, $ionicPopup) {
 		}
 	}
 
-	function checkResponse (data) {
+	function checkResponse () {
 		var str = [];
 		for (var i = 0; i < $scope.diapo.content.responses.length; i++){
 			if ($scope.diapo.content.responses[i].checked == undefined)
@@ -71,13 +67,23 @@ function DiapoCtrl($scope, $http, $rootScope, $ionicPopup) {
 		return str;
 	}
 
-	function checkRange (data) {
-
+	function checkRange () {
+		$scope.rangeValue = document.getElementById('rangeValue');
+		$scope.rangeValue = $scope.rangeValue.value;
+		var title = ["Bravo ! :D", "Mauvaise réponse :'("];
+		var advice = $scope.rangeValue == $scope.diapo.content.response ? "" : "La bonne réponse est : " + $scope.diapo.content.response;
+	    var alertPopup = $ionicPopup.alert({
+	      title: title[(advice.length ? 1 : 0)],
+	      template: advice
+	    });
+	    alertPopup.then(function(res) {
+	    	$scope.onSwipe("next");
+	    });
 	}
 
 	$scope.submitResponse = function() {
 		if ($scope.index == 8) {
-
+			checkRange($scope);
 		}
 		else {
 			var title = ["Bravo ! :D", "Mauvaise réponse :'("];
