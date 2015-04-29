@@ -53,17 +53,27 @@ function DiapoCtrl($scope, $http, $rootScope, $ionicPopup) {
 	}
 
 	function checkResponse () {
-		var str = [];
+		var str = "";
 		for (var i = 0; i < $scope.diapo.content.responses.length; i++){
 			if ($scope.diapo.content.responses[i].checked == undefined)
 				$scope.diapo.content.responses[i].checked = false;
 			if ($scope.diapo.content.responses[i].checked.toString() != $scope.diapo.content.responses[i].valid)
 			{
-				str.push(i + 1);
+				str += "FAIL";
 			}
 		}
-		if (str.length)
-			str.unshift("Errors on indexes : ");
+		if (str.length > 0)
+		{
+			str = "Réponses attendues : ";
+			for (var i = 0; i < $scope.diapo.content.responses.length; ++i){
+				if ($scope.diapo.content.responses[i].valid != "false")
+					str += "la numéro " + (i + 1) + ", ";
+			}
+			if (str.length == 21)
+				str += "Aucune !";
+			else
+				str = str.substr(0, str.length - 2);
+		}
 		return str;
 	}
 
