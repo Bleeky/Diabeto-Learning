@@ -10,6 +10,5 @@ function ModuleCtrl($scope, $state, $routeParams, $http, $rootScope) {
 	$http({method: 'GET',
 		url: $scope.url,
 	}).success(getSuccess).error(function (response){
-		console.log(response);
 	});
 }

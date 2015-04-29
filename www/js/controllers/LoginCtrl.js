@@ -5,8 +5,6 @@ function LoginCtrl($scope, $http, $state, $rootScope) {
 		autoconnect : true
 	}
 
-	console.log($rootScope.config);
-
 	$scope.loginUrl = $rootScope.config.url + "/login";
 	$scope.login = "";
 	$scope.password = "";

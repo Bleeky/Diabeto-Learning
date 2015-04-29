@@ -14,12 +14,7 @@ function HomeCtrl($scope, $http, $state, $rootScope) {
 	$http({method: 'GET',
 		url: $scope.url,
 	}).success(getSuccess).error(function (response){
-		console.log(response);
 	});
-
-	$scope.goToModule = function (moduleId) {
-		console.log(moduleId);
-	}
 
 	$scope.updateList = function() {
 		$scope.list = [];	

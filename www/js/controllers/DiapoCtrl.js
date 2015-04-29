@@ -32,12 +32,7 @@ function DiapoCtrl($scope, $http, $rootScope, $ionicPopup) {
 		$http({method: 'GET',
 			url: $scope.url,
 		}).success(getSuccess).error(function (response){
-			console.log(response);
 		});
-	}
-
-	$scope.Dump = function(){
-		console.log($scope.diapo.content.responses);
 	}
 
 	$scope.check = function(type, index) {
@@ -112,6 +107,5 @@ function DiapoCtrl($scope, $http, $rootScope, $ionicPopup) {
 	$http({method: 'GET',
 		url: $scope.url,
 	}).success(getSuccess).error(function (response){
-		console.log(response);
 	});
 }
